@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <style>
+        body {
+            background: red;
+            padding-top: 100px;
+        }
+        .div1 {
+            height: 100px;
+            background: green;
+        }
+        .div2 {
+            height: 100px;
+            background: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        div1
+        <a href="" class="link">我是超链接</a>
+    </div>
+    <div class="div2">
+        div2
+    </div>
+    <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+    <script>
+        $('body').on('click', function (e) {
+            alert('body click');
+        }).on('click', '.div1', function (e) {
+            alert('div1 click');
+        }).on('click', '.div2', function (e) {
+            alert('div2 click');
+        }).on('click', '.link', function (e) {
+            e.preventDefault();
+            alert('link click');
+        });
+    </script>
+</body>
+</html>

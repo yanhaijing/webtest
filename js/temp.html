@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var parent = Object.create(Object.prototype, {
+        a: {
+            value: 1,
+            writable: true,
+            enumerable: true,
+            configurable: true            
+        }
+    });
+
+    var child = Object.create(parent, {
+        b: {
+            value: 2,
+            writable: true,
+            enumerable: true,
+            configurable: true
+        },
+        c: {
+            value: 3,
+            writable: true,
+            enumerable: false,
+            configurable: true
+        }
+    });
+
+    console.log(Object.keys(child));
+    console.log(Object.getOwnPropertyNames(child));
+    for (var key in child) {
+        console.log(key, ',');
+    }
+    for (var key in child) {
+        if (child.hasOwnProperty(key)) {
+            console.log(key, ',');
+        }
+    }
+</script>
+</body>
+</html>

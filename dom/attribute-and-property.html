@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/123" id="aaa"></a>
+
+    <script>
+        var aaa = document.getElementById('aaa');
+
+        // 测试内部属性
+        console.log(aaa.href);
+        console.log(aaa.getAttribute('href'));
+
+        console.log('--------------------');
+        
+        aaa.className = 'aaa';
+        console.log(aaa.className);
+        console.log(aaa.getAttribute('class'));
+
+        console.log('--------------------');
+        
+        aaa.setAttribute('class', 'aaa2');
+        console.log(aaa.className);
+        console.log(aaa.getAttribute('class'));
+
+        console.log('--------------------');
+
+        aaa.aaa = 'aaa1';
+        console.log(aaa.aaa);
+        console.log(aaa.getAttribute('aaa'));
+
+        console.log('--------------------');
+
+        aaa.setAttribute('aaa2', 'aaa2');
+        console.log(aaa.aaa2);
+        console.log(aaa.getAttribute('aaa2'));
+    </script>
+</body>
+</html>
