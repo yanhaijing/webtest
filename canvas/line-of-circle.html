@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500">
+        您的浏览器不支持canvas
+    </canvas>
+
+    <script>
+        var ctx = document.querySelector('canvas').getContext('2d');
+
+        var x = 200;
+        var y = 200;
+        var r = 150;
+
+        var rad = Math.PI / 8;
+
+        var i = 0;
+        ctx.lineWidth = 1;
+        ctx.lineJoin = 'miter';
+        while (i < Math.PI * 2) {
+            var x1 = x + Math.cos(i) * r;
+            var y1 = y + Math.sin(i) * r;
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x1, y1);
+            ctx.closePath();
+            console.log(x, y, x1, y1)
+            // ctx.fill();
+            ctx.stroke();
+
+            i += rad;
+        }
+    </script>
+</body>
+</html>
